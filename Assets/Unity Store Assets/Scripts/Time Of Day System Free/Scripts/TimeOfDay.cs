@@ -460,6 +460,8 @@ namespace AC.TimeOfDaySystemFree
 			// Prevent the current time exceeds the day duration.
 			if (timeline > k_DayDuration) timeline = 0; 
 			if (timeline < 0)          timeline = k_DayDuration; 
+
+			//timeline = Mathf.Repeat(timeline, k_DayDuration);
 			//---------------------------------------------------------------------------------
 
 			// Play time.
@@ -550,7 +552,7 @@ namespace AC.TimeOfDaySystemFree
 		{
 
 
-			if(m_DirectionalLight == null) return;
+			if(m_DirectionalLight == null || m_DirectionalLight.transform == null) return;
 
 			if (IsSunLight) 
 			{

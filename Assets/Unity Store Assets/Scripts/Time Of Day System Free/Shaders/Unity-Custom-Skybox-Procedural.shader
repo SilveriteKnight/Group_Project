@@ -2,7 +2,7 @@
 ///*************************************************************
 /// Custom procedural skybox.
 /// Added moon, night  color and stars.
-/// Notice: This shader is property of the Unity Tecnologuies.
+/// Notice: this shader is property by Unity Technologies.
 ///*************************************************************
 
 Shader "AC/Time Of Day System Free/Unity Custom/Skybox/Procedural"  

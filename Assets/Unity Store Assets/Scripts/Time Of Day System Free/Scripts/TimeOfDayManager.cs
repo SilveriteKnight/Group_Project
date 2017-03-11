@@ -411,29 +411,18 @@ namespace AC.TimeOfDaySystemFree
 		#endregion
 
 
-
-
-		void Start()
-		{
-			if (Application.isPlaying)
-			{
-				Init();
-			}
-		}
-
-
 		void Update()
 		{
 
 			if (skyMaterial == null) return;
 
-			#if UNITY_EDITOR
-			if (!Application.isPlaying)
+
+			if (m_DirectionalLightTransform == null)
 			{
 				Init(); 
-				timeline = Mathf.Clamp (timeline, 0 - .0001f, k_DayDuration + .0001f);
 			}
-			#endif
+			//timeline = Mathf.Clamp (timeline, 0 - .0001f, k_DayDuration + .0001f);
+		
 
 			UpdateTime ();
 

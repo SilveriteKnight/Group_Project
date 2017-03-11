@@ -1,1 +1,1 @@
-"Unity-Custom-Procedural-Skybox" shader is property of the Unity Tecnologies.
+"Unity-Custom-Procedural-Skybox" shader is property by Unity Technologies.
