@@ -8,12 +8,14 @@ public class letterTrigger : MonoBehaviour {
     public GameObject promptText;
     public GameObject letter;
     public bool trigger = false;
+    public bool press = false;
 
 
     // Use this for initialization
     void Start () {
         promptText.SetActive(false);
         letter.SetActive(false);
+        press = false;
 	}
 
     void OnTriggerEnter(Collider coll)
@@ -36,9 +38,22 @@ public class letterTrigger : MonoBehaviour {
 	void Update () {
 		if (trigger)
         {
-            if (Input.GetKey(KeyCode.E))
+            if ((Input.GetKey(KeyCode.E)) && (press == false))
+            {
+                press = true;
+            }
+            else if((Input.GetKey(KeyCode.R)) && (press == true))
+            {
+                press = false;
+            }
+
+            if (press)
             {
                 letter.SetActive(true);
+            }
+            else if(press == false)
+            {
+                letter.SetActive(false);
             }
         }
 	}

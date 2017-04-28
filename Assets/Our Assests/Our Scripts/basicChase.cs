@@ -8,7 +8,8 @@ public class basicChase : MonoBehaviour {
 	public Transform run;
 	public bool chasing = false;
 	public bool fleeing = false;
-	public float speed;
+	public float chaseSpeed;
+    public float runSpeed;
 	private Vector3 turn;
     public float deathTime;
 
@@ -31,12 +32,12 @@ public class basicChase : MonoBehaviour {
 	void Update () {
 		if(chasing){
 			transform.LookAt(chase);
-			float step = speed * Time.deltaTime;
+			float step = chaseSpeed * Time.deltaTime;
 			transform.position = Vector3.MoveTowards (transform.position, chase.position, step);
 		}
 		if (fleeing) {
             transform.LookAt(run);
-			float step = (speed + 3) * Time.deltaTime;
+			float step = runSpeed * Time.deltaTime;
 			transform.position = Vector3.MoveTowards (transform.position, run.position, step);
             Destroy(gameObject, deathTime);
 		}
